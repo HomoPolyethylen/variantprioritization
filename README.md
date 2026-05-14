@@ -52,6 +52,7 @@ The workflow accepts as input a `samplesheet.csv` file containing the paths to S
 | vcf     | Full path to VCF file(s)                                                                                             |
 | cna     | Full path to segment file                                                                                            |
 | sex     | The patient's sex                                                                                                    |
+| tumor_site | Primary tumor type/site code used for site-specific interpretation. (see [PCGR docs](https://sigven.github.io/pcgr/articles/running.html#tumor-site)) |
 
 An example of a valid samplesheet is given below:
 

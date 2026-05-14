@@ -191,12 +191,6 @@
                     "description": "Type of DNA sequencing assay performed for input data.",
                     "help_text": "PCGR option `--assay` (default in PCGR: WES)."
                 },
-                "tumor_site": {
-                    "type": "integer",
-                    "default": 0,
-                    "description": "Primary tumor type/site code used for site-specific interpretation.",
-                    "help_text": "PCGR `--tumor_site` supports codes 0-30, where 0 means any tumor type."
-                },
                 "tumor_ploidy": {
                     "type": "string",
                     "description": "Estimated tumor ploidy."

@@ -30,6 +30,15 @@
                 "default": "UNKNOWN",
                 "meta": ["sex"]
             },
+            "tumor_site": {
+                "type": "integer",
+                "description": "Primary tumor type/site code used for site-specific interpretation.",
+                "minimum": 0,
+                "maximum": 30,
+                "errorMessage": "Tumor site must be specified in PCGR's numeric encoding, see https://sigven.github.io/pcgr/articles/running.html#tumor-site",
+                "default": 0,
+                "meta": ["tumor_site"]
+            },
             "vcf": {
                 "type": "string",
                 "format": "file-path",

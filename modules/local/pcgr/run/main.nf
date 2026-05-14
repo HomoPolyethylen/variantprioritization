@@ -39,6 +39,7 @@ process PCGR_RUN {
         --genome_assembly ${genome} \\
         --sample_id ${prefix} \\
         --sex ${meta.sex} \\
+        --tumor_site ${meta.tumor_site} \\
         --tumor_dp_tag 'TDP' \\
         --tumor_af_tag 'TAF' \\
         --call_conf_tag 'TAL' \\
