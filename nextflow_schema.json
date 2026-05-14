@@ -191,10 +191,6 @@
                     "description": "Type of DNA sequencing assay performed for input data.",
                     "help_text": "PCGR option `--assay` (default in PCGR: WES)."
                 },
-                "tumor_ploidy": {
-                    "type": "string",
-                    "description": "Estimated tumor ploidy."
-                },
                 "cna_analysis": {
                     "type": "boolean",
                     "description": "Enable copy-number alteration (CNA) analysis and reporting."

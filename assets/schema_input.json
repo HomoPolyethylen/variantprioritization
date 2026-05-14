@@ -46,6 +46,12 @@
                 "maximum": 1,
                 "meta": ["tumor_purity"]
             },
+            "tumor_ploidy": {
+                "type": "number",
+                "description": "Estimated tumor ploidy",
+                "exclusiveMinimum": 0,
+                "meta": ["tumor_ploidy"]
+            },
             "vcf": {
                 "type": "string",
                 "format": "file-path",

@@ -54,6 +54,7 @@ The workflow accepts as input a `samplesheet.csv` file containing the paths to S
 | sex          | The patient's sex                                                                                                                                     |
 | tumor_site   | Primary tumor type/site code used for site-specific interpretation. (see [PCGR docs](https://sigven.github.io/pcgr/articles/running.html#tumor-site)) |
 | tumor_purity | Estimated tumor purity.                                                                                                                               |
+| tumor_ploidy | Estimated tumor ploidy.                                                                                                                               |
 
 An example of a valid samplesheet is given below:
 

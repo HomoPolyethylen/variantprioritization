@@ -25,6 +25,7 @@ process PCGR_RUN {
     prefix               = task.ext.prefix      ?: "${meta.id}"
     def cna_cmd          = params.cna_analysis  ? "--input_cna ${cna}"                  : ''
     def opt_tumor_purity = meta.tumor_purity    ? "--tumor_purity ${meta.tumor_purity}" : ''
+    def opt_tumor_ploidy = meta.tumor_ploidy    ? "--tumor_ploidy ${meta.tumor_ploidy}" : ''
     """
     export XDG_CACHE_HOME=/tmp
     export XDG_DATA_HOME=/tmp
@@ -46,6 +47,7 @@ process PCGR_RUN {
         --call_conf_tag 'TAL' \\
         ${cna_cmd} \\
         ${opt_tumor_purity} \\
+        ${opt_tumor_ploidy} \\
         ${args}
     """
 
