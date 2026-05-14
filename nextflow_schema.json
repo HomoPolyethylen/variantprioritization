@@ -229,11 +229,6 @@
                     "description": "VCF INFO tag for somatic call confidence.",
                     "help_text": "Maps to PCGR `--call_conf_tag`."
                 },
-                "tumor_purity": {
-                    "description": "Estimated tumor purity.",
-                    "minimum": 0,
-                    "maximum": 1
-                },
                 "effective_target_size_mb": {
                     "type": "integer",
                     "default": 34,

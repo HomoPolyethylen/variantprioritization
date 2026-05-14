@@ -39,6 +39,13 @@
                 "default": 0,
                 "meta": ["tumor_site"]
             },
+            "tumor_purity": {
+                "type": "number",
+                "description": "Estimated tumor purity.",
+                "minimum": 0,
+                "maximum": 1,
+                "meta": ["tumor_purity"]
+            },
             "vcf": {
                 "type": "string",
                 "format": "file-path",
