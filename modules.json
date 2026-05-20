@@ -22,7 +22,7 @@
                     },
                     "pcgr/getref": {
                         "branch": "master",
-                        "git_sha": "f4bb53a7ba632e89634f696c1077dbd1df86b08c",
+                        "git_sha": "6d46786420b4d7bc88eba026eb389c0c5535d120",
                         "installed_by": ["modules"]
                     },
                     "tabix/bgziptabix": {
