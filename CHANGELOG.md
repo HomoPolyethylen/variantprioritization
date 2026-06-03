@@ -7,15 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [#94](https://github.com/nf-core/variantprioritization/pull/94) - added optional column 'sex' to samplesheet
+- [#94](https://github.com/nf-core/variantprioritization/pull/94) - added optional column 'sex' to samplesheet (@HomoPolyethylen)
 
 ### Changed
 
 - [#93](https://github.com/nf-core/variantprioritization/pull/93) - Template update for nf-core/tools v4.0.2 (@HomoPolyethylen)
+- [#96](https://github.com/nf-core/variantprioritization/pull/96) - moved sample-specific PCGR parameters to samplesheet (@HomoPolyethylen)
 
 ### Fixed
 
 ### Removed
+
+- `params.tumor_site` moved to samplesheet `meta.tumor_site`
+- `params.tumor_purity` moved to samplesheet `meta.tumor_purity`
+- `params.tumor_ploidy` moved to samplesheet `meta.tumor_ploidy`
 
 ### Dependencies
 
