@@ -40,6 +40,9 @@ workflow PREPARE_SOMATIC {
         var.status = meta.status
         var.sample = meta.sample
         var.sex = meta.sex
+        var.tumor_site = meta.tumor_site
+        var.tumor_purity = meta.tumor_purity
+        var.tumor_ploidy = meta.tumor_ploidy
         def tool = meta.tool?.startsWith('strelka') ? 'strelka' : meta.tool
         return [var, vcf, tbi, tool]
     }
@@ -59,7 +62,7 @@ workflow PREPARE_SOMATIC {
 
     sample_vcfs_keys = INTERSECT_VCF.out.variant_tool_map
         .map { meta, keys ->
-            [meta.subMap(['patient', 'status', 'sample', 'sex']), keys]
+            [meta.subMap(['patient', 'status', 'sample', 'sex', 'tumor_site', 'tumor_purity', 'tumor_ploidy']), keys]
         }
         .join(per_sample_somatic_vcfs)
         .map { meta, keys, vcfs, tbis, _tools -> [meta, keys, vcfs, tbis] }
