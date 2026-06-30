@@ -63,7 +63,7 @@ workflow INPUT_PREPROCESSING {
     ch_norm = BCFTOOLS_NORM.out.vcf.join(BCFTOOLS_NORM.out.tbi)
 
     BCFTOOLS_FILTER(ch_norm)
-    ch_filtered = BCFTOOLS_FILTER.out.vcf.join(BCFTOOLS_FILTER.out.tbi)
+    ch_filtered = BCFTOOLS_FILTER.out.vcf.join(BCFTOOLS_FILTER.out.index)
 
     normalised_germline = ch_filtered.filter { meta, _vcf, _tbi -> meta.status == 'germline' }
     normalised_somatic = ch_filtered.filter { meta, _vcf, _tbi -> meta.status == 'somatic' }
