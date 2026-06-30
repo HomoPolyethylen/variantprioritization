@@ -60,7 +60,7 @@ workflow INPUT_PREPROCESSING {
         .set { ch_vcf_preprocessed }
 
     BCFTOOLS_NORM(ch_vcf_preprocessed, fasta)
-    ch_norm = BCFTOOLS_NORM.out.vcf.join(BCFTOOLS_NORM.out.tbi)
+    ch_norm = BCFTOOLS_NORM.out.vcf.join(BCFTOOLS_NORM.out.index)
 
     BCFTOOLS_FILTER(ch_norm)
     ch_filtered = BCFTOOLS_FILTER.out.vcf.join(BCFTOOLS_FILTER.out.index)
