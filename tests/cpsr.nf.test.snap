@@ -4,10 +4,10 @@
             11,
             {
                 "BCFTOOLS_FILTER": {
-                    "bcftools": 1.22
+                    "bcftools": "1.23.1"
                 },
                 "BCFTOOLS_NORM": {
-                    "bcftools": 1.22
+                    "bcftools": "1.23.1"
                 },
                 "CPSR_RUN": {
                     "cpsr": "2.2.5"
@@ -97,10 +97,10 @@
             ],
             "No warnings"
         ],
+        "timestamp": "2026-06-30T22:45:11.754362927",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.4"
-        },
-        "timestamp": "2026-03-10T14:27:30.318687541"
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.4"
+        }
     }
 }
