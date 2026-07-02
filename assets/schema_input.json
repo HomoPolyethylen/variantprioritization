@@ -67,6 +67,20 @@
                 "errorMessage": "CNA file cannot contain spaces and must have extension '.cns'"
             }
         },
-        "required": ["patient", "status", "sample", "vcf"]
+
+        "required": ["patient", "status", "sample", "vcf"],
+        "allOf": [
+            {
+                "if": { "properties": { "status": { "const": 0 } } },
+                "then": {
+                    "$comment": "extra constraints for GERMLINE analysis: illegal columns",
+                    "properties": {
+                        "tumor_site": false,
+                        "tumor_purity": false,
+                        "tumor_ploidy": false
+                    }
+                }
+            }
+        ]
     }
 }
