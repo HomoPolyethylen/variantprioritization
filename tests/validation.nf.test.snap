@@ -1,5 +1,111 @@
 {
-    "-profile test --input tests/csv/duplicated_germline.csv": {
+    "Germline row with all tumor columns (invalid)": {
+        "content": [
+            0,
+            {
+                
+            },
+            [
+                "pipeline_info"
+            ],
+            "No stable content",
+            "No VCF files",
+            "No warnings",
+            [
+                "\t-> Entry 1: Error for field 'tumor_purity' (0.5): False schema always fails",
+                "\t-> Entry 1: Error for field 'tumor_ploidy' (2): False schema always fails",
+                "\t-> Entry 1: Error for field 'tumor_site' (5): False schema always fails"
+            ]
+        ],
+        "timestamp": "2026-07-03T16:30:36.805497477",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.4"
+        }
+    },
+    "Somatic row with all optional fields (valid)": {
+        "content": [
+            9,
+            {
+                "BCFTOOLS_FILTER": {
+                    "bcftools": 1.22
+                },
+                "BCFTOOLS_NORM": {
+                    "bcftools": 1.22
+                },
+                "INTERSECT_VCF": {
+                    "bcftools": 1.22,
+                    "pandas": "2.3.3",
+                    "pysam": "0.23.3",
+                    "python": "3.10.19"
+                },
+                "PCGR_PREPAREVCF": {
+                    "numpy": "2.2.6",
+                    "pandas": "2.3.3",
+                    "pysam": "0.23.3",
+                    "python": "3.10.19",
+                    "vcf2tsvpy": "0.6.1"
+                },
+                "PCGR_RUN": {
+                    "pcgr": "2.2.5"
+                },
+                "REFORMAT_CNA": {
+                    "numpy": "2.2.6",
+                    "pandas": "2.3.3",
+                    "pysam": "0.23.3",
+                    "python": "3.10.19",
+                    "vcf2tsvpy": "0.6.1"
+                },
+                "REFORMAT_VCF": {
+                    "bcftools": 1.22,
+                    "pandas": "2.3.3",
+                    "pysam": "0.23.3",
+                    "python": "3.10.19"
+                },
+                "TABIX_TABIX": {
+                    "tabix": 1.21
+                }
+            },
+            [
+                "bcftools",
+                "bcftools/filter",
+                "bcftools/filter/test.test.strelka_snv.norm.filtered.vcf.gz",
+                "bcftools/filter/test.test.strelka_snv.norm.filtered.vcf.gz.tbi",
+                "bcftools/norm",
+                "bcftools/norm/test.test.strelka_snv.norm.vcf.gz",
+                "bcftools/norm/test.test.strelka_snv.norm.vcf.gz.tbi",
+                "custom",
+                "custom/intersect_vcf",
+                "custom/intersect_vcf/test.test_keys.txt",
+                "custom/pcgr_ready_vcf",
+                "custom/pcgr_ready_vcf/test.test.vcf.gz",
+                "custom/pcgr_ready_vcf/test.test.vcf.gz.tbi",
+                "custom/reformat",
+                "custom/reformat/test.reformatted.allelic_cna.tsv",
+                "custom/reformat/test.test.strelka_snv.reformatted.vcf.gz",
+                "custom/reformat/test.test.strelka_snv.reformatted.vcf.gz.tbi",
+                "multiqc",
+                "multiqc/multiqc_data",
+                "multiqc/multiqc_data/.stub",
+                "multiqc/multiqc_plots",
+                "multiqc/multiqc_plots/.stub",
+                "multiqc/multiqc_report.html",
+                "pcgr",
+                "pcgr/test.test",
+                "pipeline_info",
+                "pipeline_info/nf_core_variantprioritization_software_mqc_versions.yml",
+                "tabix",
+                "tabix/HCC1395T_vs_HCC1395N.strelka.somatic_snvs_chr22.vcf.gz.tbi"
+            ],
+            "No warnings"
+        ],
+        "timestamp": "2026-07-03T16:31:29.817368065",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.4"
+        }
+    },
+    "Duplicated germline sample IDs (invalid)": {
         "content": [
             0,
             {
@@ -15,10 +121,182 @@
                 "Duplicate germline sample IDs found: HCC1395.HCC1395N. Intersection of calls is only implemented for somatic reporting. For germline calls, please provide unique sample IDs."
             ]
         ],
+        "timestamp": "2026-07-03T16:29:55.909641678",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.2"
-        },
-        "timestamp": "2026-03-10T13:11:35.058768"
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.4"
+        }
+    },
+    "Germline row with tumor_purity (invalid)": {
+        "content": [
+            0,
+            {
+                
+            },
+            [
+                "pipeline_info"
+            ],
+            "No stable content",
+            "No VCF files",
+            "No warnings",
+            [
+                "* --input ([PATH]/./tests/csv/germline_with_tumor_purity.csv): Validation of file failed:",
+                "\t-> Entry 1: Error for field 'tumor_purity' (0.5): False schema always fails"
+            ]
+        ],
+        "timestamp": "2026-07-03T16:30:16.068790402",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.4"
+        }
+    },
+    "Germline row with tumor_ploidy (invalid)": {
+        "content": [
+            0,
+            {
+                
+            },
+            [
+                "pipeline_info"
+            ],
+            "No stable content",
+            "No VCF files",
+            "No warnings",
+            [
+                "* --input ([PATH]/./tests/csv/germline_with_tumor_ploidy.csv): Validation of file failed:",
+                "\t-> Entry 1: Error for field 'tumor_ploidy' (2): False schema always fails"
+            ]
+        ],
+        "timestamp": "2026-07-03T16:30:25.985469082",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.4"
+        }
+    },
+    "Germline row with tumor_site (invalid)": {
+        "content": [
+            0,
+            {
+                
+            },
+            [
+                "pipeline_info"
+            ],
+            "No stable content",
+            "No VCF files",
+            "No warnings",
+            [
+                "* --input ([PATH]/./tests/csv/germline_with_tumor_site.csv): Validation of file failed:",
+                "\t-> Entry 1: Error for field 'tumor_site' (5): False schema always fails"
+            ]
+        ],
+        "timestamp": "2026-07-03T16:30:06.083581255",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.4"
+        }
+    },
+    "Somatic/Germline mosaic: multi samples with different optional fields (valid)": {
+        "content": [
+            26,
+            {
+                "BCFTOOLS_FILTER": {
+                    "bcftools": 1.22
+                },
+                "BCFTOOLS_NORM": {
+                    "bcftools": 1.22
+                },
+                "CPSR_RUN": {
+                    "cpsr": "2.2.5"
+                },
+                "INTERSECT_VCF": {
+                    "bcftools": 1.22,
+                    "pandas": "2.3.3",
+                    "pysam": "0.23.3",
+                    "python": "3.10.19"
+                },
+                "PCGR_PREPAREVCF": {
+                    "numpy": "2.2.6",
+                    "pandas": "2.3.3",
+                    "pysam": "0.23.3",
+                    "python": "3.10.19",
+                    "vcf2tsvpy": "0.6.1"
+                },
+                "PCGR_RUN": {
+                    "pcgr": "2.2.5"
+                },
+                "REFORMAT_VCF": {
+                    "bcftools": 1.22,
+                    "pandas": "2.3.3",
+                    "pysam": "0.23.3",
+                    "python": "3.10.19"
+                },
+                "TABIX_TABIX": {
+                    "tabix": 1.21
+                }
+            },
+            [
+                "bcftools",
+                "bcftools/filter",
+                "bcftools/filter/testA.test.strelka_snv.norm.filtered.vcf.gz",
+                "bcftools/filter/testA.test.strelka_snv.norm.filtered.vcf.gz.tbi",
+                "bcftools/filter/testB.test.strelka_snv.norm.filtered.vcf.gz",
+                "bcftools/filter/testB.test.strelka_snv.norm.filtered.vcf.gz.tbi",
+                "bcftools/filter/testC.test.strelka_snv.norm.filtered.vcf.gz",
+                "bcftools/filter/testC.test.strelka_snv.norm.filtered.vcf.gz.tbi",
+                "bcftools/filter/testD.test.strelka_snv.norm.filtered.vcf.gz",
+                "bcftools/filter/testD.test.strelka_snv.norm.filtered.vcf.gz.tbi",
+                "bcftools/norm",
+                "bcftools/norm/testA.test.strelka_snv.norm.vcf.gz",
+                "bcftools/norm/testA.test.strelka_snv.norm.vcf.gz.tbi",
+                "bcftools/norm/testB.test.strelka_snv.norm.vcf.gz",
+                "bcftools/norm/testB.test.strelka_snv.norm.vcf.gz.tbi",
+                "bcftools/norm/testC.test.strelka_snv.norm.vcf.gz",
+                "bcftools/norm/testC.test.strelka_snv.norm.vcf.gz.tbi",
+                "bcftools/norm/testD.test.strelka_snv.norm.vcf.gz",
+                "bcftools/norm/testD.test.strelka_snv.norm.vcf.gz.tbi",
+                "cpsr",
+                "cpsr/testD.test",
+                "custom",
+                "custom/intersect_vcf",
+                "custom/intersect_vcf/testA.test_keys.txt",
+                "custom/intersect_vcf/testB.test_keys.txt",
+                "custom/intersect_vcf/testC.test_keys.txt",
+                "custom/pcgr_ready_vcf",
+                "custom/pcgr_ready_vcf/testA.test.vcf.gz",
+                "custom/pcgr_ready_vcf/testA.test.vcf.gz.tbi",
+                "custom/pcgr_ready_vcf/testB.test.vcf.gz",
+                "custom/pcgr_ready_vcf/testB.test.vcf.gz.tbi",
+                "custom/pcgr_ready_vcf/testC.test.vcf.gz",
+                "custom/pcgr_ready_vcf/testC.test.vcf.gz.tbi",
+                "custom/reformat",
+                "custom/reformat/testA.test.strelka_snv.reformatted.vcf.gz",
+                "custom/reformat/testA.test.strelka_snv.reformatted.vcf.gz.tbi",
+                "custom/reformat/testB.test.strelka_snv.reformatted.vcf.gz",
+                "custom/reformat/testB.test.strelka_snv.reformatted.vcf.gz.tbi",
+                "custom/reformat/testC.test.strelka_snv.reformatted.vcf.gz",
+                "custom/reformat/testC.test.strelka_snv.reformatted.vcf.gz.tbi",
+                "multiqc",
+                "multiqc/multiqc_data",
+                "multiqc/multiqc_data/.stub",
+                "multiqc/multiqc_plots",
+                "multiqc/multiqc_plots/.stub",
+                "multiqc/multiqc_report.html",
+                "pcgr",
+                "pcgr/testA.test",
+                "pcgr/testB.test",
+                "pcgr/testC.test",
+                "pipeline_info",
+                "pipeline_info/nf_core_variantprioritization_software_mqc_versions.yml",
+                "tabix",
+                "tabix/HCC1395T_vs_HCC1395N.strelka.somatic_snvs_chr22.vcf.gz.tbi"
+            ],
+            "No warnings"
+        ],
+        "timestamp": "2026-07-03T16:32:25.964157498",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.4"
+        }
     }
 }

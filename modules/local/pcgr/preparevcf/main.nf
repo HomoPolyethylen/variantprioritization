@@ -32,4 +32,11 @@ process PCGR_PREPAREVCF {
         --tbi-dir inputs/ \
         --pcgr-header ${pcgr_header}
     """
+
+    stub:
+    prefix = task.ext.prefix ?: "${meta.id}"
+    """
+    touch ${prefix}.vcf.gz
+    touch ${prefix}.vcf.gz.tbi
+    """
 }

@@ -13,7 +13,7 @@ class UTILS {
 
         // Use this args to run the test with stub
         // It will disable all assertions but versions and stable_name
-        def stub = args.stub
+        def stub = args.scenario.stub
 
         // Will print the summary instead of the md5sum for vcf files
         def no_vcf_md5sum = args.no_vcf_md5sum

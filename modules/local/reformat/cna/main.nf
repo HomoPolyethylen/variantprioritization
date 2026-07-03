@@ -28,4 +28,10 @@ process REFORMAT_CNA {
         --input ${cna} \\
         --out ${prefix}
     """
+
+    stub:
+    prefix      = task.ext.prefix ?: "${meta.id}"
+    """
+    touch ${prefix}.tsv
+    """
 }

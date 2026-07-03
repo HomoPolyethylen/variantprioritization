@@ -30,4 +30,11 @@ process REFORMAT_VCF {
         --input ${vcf} \\
         --output ${prefix}.vcf.gz
     """
+
+    stub:
+    prefix      = task.ext.prefix ?: "${meta.id}"
+    """
+    touch ${prefix}.vcf.gz
+    touch ${prefix}.vcf.gz.tbi
+    """
 }

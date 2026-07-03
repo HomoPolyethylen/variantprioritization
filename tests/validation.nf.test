@@ -2,14 +2,14 @@ def projectDir = new File('.').absolutePath
 
 nextflow_pipeline {
 
-    name "Test pipeline"
+    name "Test input validation"
     script "../main.nf"
     tag "pipeline"
     tag "ci_test"
 
     def test_scenario = [
         [
-            name: "-profile test --input tests/csv/duplicated_germline.csv",
+            name: "Duplicated germline sample IDs (invalid)",
             params: [
                 input: "${projectDir}/tests/csv/duplicated_germline.csv"
             ],
@@ -18,6 +18,68 @@ nextflow_pipeline {
             snapshot_ignore: 'Downloading plugin',
             snapshot_include: 'Duplicate germline'
         ],
+        [
+            name: "Germline row with tumor_site (invalid)",
+            params: [
+                input: "${projectDir}/tests/csv/germline_with_tumor_site.csv"
+            ],
+            failure: true,
+            snapshot: 'stderr,stdout',
+            snapshot_ignore: 'Downloading plugin',
+            snapshot_include: 'tumor_site'
+        ],
+        [
+            name: "Germline row with tumor_purity (invalid)",
+            params: [
+                input: "${projectDir}/tests/csv/germline_with_tumor_purity.csv"
+            ],
+            failure: true,
+            snapshot: 'stderr,stdout',
+            snapshot_ignore: 'Downloading plugin',
+            snapshot_include: 'tumor_purity'
+        ],
+        [
+            name: "Germline row with tumor_ploidy (invalid)",
+            params: [
+                input: "${projectDir}/tests/csv/germline_with_tumor_ploidy.csv"
+            ],
+            failure: true,
+            snapshot: 'stderr,stdout',
+            snapshot_ignore: 'Downloading plugin',
+            snapshot_include: 'tumor_ploidy'
+        ],
+        [
+            name: "Germline row with all tumor columns (invalid)",
+            params: [
+                input: "${projectDir}/tests/csv/germline_with_all_tumor_cols.csv"
+            ],
+            failure: true,
+            snapshot: 'stderr,stdout',
+            snapshot_ignore: 'Downloading plugin',
+            snapshot_include: 'False schema always fails',
+        ],
+        [
+            name: "Somatic row with all optional fields (valid)",
+            params: [
+                input: "${projectDir}/tests/csv/somatic_valid_all_fields.csv",
+                cna_analysis: true,
+                pcgr_database_dir: "${projectDir}/tests/data/validation/pcgr_db",
+                vep_cache: "${projectDir}/tests/data/validation/vep_cache",
+                igenomes_base: "${projectDir}/tests/data/validation/igenomes"
+            ],
+            stub: true
+        ],
+        [
+            name: "Somatic/Germline mosaic: multi samples with different optional fields (valid)",
+            params: [
+                input: "${projectDir}/tests/csv/germline-somatic_valid_mosaic.csv",
+                cna_analysis: false,
+                pcgr_database_dir: "${projectDir}/tests/data/validation/pcgr_db",
+                vep_cache: "${projectDir}/tests/data/validation/vep_cache",
+                igenomes_base: "${projectDir}/tests/data/validation/igenomes"
+            ],
+            stub: true
+        ]
     ]
 
     // Generate tests for each scenario
