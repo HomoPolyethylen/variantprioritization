@@ -63,9 +63,9 @@ nextflow_pipeline {
             params: [
                 input: "${projectDir}/tests/csv/somatic_valid_all_fields.csv",
                 cna_analysis: true,
-                pcgr_database_dir: "${projectDir}/tests/data/validation/pcgr_db",
-                vep_cache: "${projectDir}/tests/data/validation/vep_cache",
-                igenomes_base: "${projectDir}/tests/data/validation/igenomes"
+                pcgr_database_dir: "${projectDir}/tests/data_dummy/validation/pcgr_db",
+                vep_cache: "${projectDir}/tests/data_dummy/validation/vep_cache",
+                igenomes_base: "${projectDir}/tests/data_dummy/validation/igenomes"
             ],
             stub: true
         ],
@@ -74,9 +74,9 @@ nextflow_pipeline {
             params: [
                 input: "${projectDir}/tests/csv/germline-somatic_valid_mosaic.csv",
                 cna_analysis: false,
-                pcgr_database_dir: "${projectDir}/tests/data/validation/pcgr_db",
-                vep_cache: "${projectDir}/tests/data/validation/vep_cache",
-                igenomes_base: "${projectDir}/tests/data/validation/igenomes"
+                pcgr_database_dir: "${projectDir}/tests/data_dummy/validation/pcgr_db",
+                vep_cache: "${projectDir}/tests/data_dummy/validation/vep_cache",
+                igenomes_base: "${projectDir}/tests/data_dummy/validation/igenomes"
             ],
             stub: true
         ]
