@@ -1,28 +1,4 @@
 {
-    "Germline row with all tumor columns (invalid)": {
-        "content": [
-            0,
-            {
-                
-            },
-            [
-                "pipeline_info"
-            ],
-            "No stable content",
-            "No VCF files",
-            "No warnings",
-            [
-                "\t-> Entry 1: Error for field 'tumor_purity' (0.5): False schema always fails",
-                "\t-> Entry 1: Error for field 'tumor_ploidy' (2): False schema always fails",
-                "\t-> Entry 1: Error for field 'tumor_site' (5): False schema always fails"
-            ]
-        ],
-        "timestamp": "2026-07-03T16:30:36.805497477",
-        "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.4"
-        }
-    },
     "Somatic row with all optional fields (valid)": {
         "content": [
             9,
@@ -127,7 +103,7 @@
             "nextflow": "26.04.4"
         }
     },
-    "Germline row with tumor_purity (invalid)": {
+    "Germline row with tumor columns (invalid)": {
         "content": [
             0,
             {
@@ -140,60 +116,15 @@
             "No VCF files",
             "No warnings",
             [
-                "* --input ([PATH]/./tests/csv/germline_with_tumor_purity.csv): Validation of file failed:",
-                "\t-> Entry 1: Error for field 'tumor_purity' (0.5): False schema always fails"
-            ]
-        ],
-        "timestamp": "2026-07-03T16:30:16.068790402",
-        "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.4"
-        }
-    },
-    "Germline row with tumor_ploidy (invalid)": {
-        "content": [
-            0,
-            {
-                
-            },
-            [
-                "pipeline_info"
-            ],
-            "No stable content",
-            "No VCF files",
-            "No warnings",
-            [
-                "* --input ([PATH]/./tests/csv/germline_with_tumor_ploidy.csv): Validation of file failed:",
-                "\t-> Entry 1: Error for field 'tumor_ploidy' (2): False schema always fails"
-            ]
-        ],
-        "timestamp": "2026-07-03T16:30:25.985469082",
-        "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.4"
-        }
-    },
-    "Germline row with tumor_site (invalid)": {
-        "content": [
-            0,
-            {
-                
-            },
-            [
-                "pipeline_info"
-            ],
-            "No stable content",
-            "No VCF files",
-            "No warnings",
-            [
-                "* --input ([PATH]/./tests/csv/germline_with_tumor_site.csv): Validation of file failed:",
+                "\t-> Entry 1: Error for field 'tumor_purity' (0.5): False schema always fails",
+                "\t-> Entry 1: Error for field 'tumor_ploidy' (2): False schema always fails",
                 "\t-> Entry 1: Error for field 'tumor_site' (5): False schema always fails"
             ]
         ],
-        "timestamp": "2026-07-03T16:30:06.083581255",
+        "timestamp": "2026-07-05T23:50:38.193448217",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.4"
+            "nextflow": "26.04.2"
         }
     },
     "Somatic/Germline mosaic: multi samples with different optional fields (valid)": {
@@ -291,9 +222,11 @@
                 "tabix",
                 "tabix/HCC1395T_vs_HCC1395N.strelka.somatic_snvs_chr22.vcf.gz.tbi"
             ],
-            "No warnings"
+            [
+                "WARN: nf-core pipelines do not accept positional arguments. The positional argument `true` has been detected."
+            ]
         ],
-        "timestamp": "2026-07-03T16:32:25.964157498",
+        "timestamp": "2026-07-06T21:54:22.362897548",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.4"

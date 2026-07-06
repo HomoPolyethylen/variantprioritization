@@ -19,37 +19,7 @@ nextflow_pipeline {
             snapshot_include: 'Duplicate germline'
         ],
         [
-            name: "Germline row with tumor_site (invalid)",
-            params: [
-                input: "${projectDir}/tests/csv/germline_with_tumor_site.csv"
-            ],
-            failure: true,
-            snapshot: 'stderr,stdout',
-            snapshot_ignore: 'Downloading plugin',
-            snapshot_include: 'tumor_site'
-        ],
-        [
-            name: "Germline row with tumor_purity (invalid)",
-            params: [
-                input: "${projectDir}/tests/csv/germline_with_tumor_purity.csv"
-            ],
-            failure: true,
-            snapshot: 'stderr,stdout',
-            snapshot_ignore: 'Downloading plugin',
-            snapshot_include: 'tumor_purity'
-        ],
-        [
-            name: "Germline row with tumor_ploidy (invalid)",
-            params: [
-                input: "${projectDir}/tests/csv/germline_with_tumor_ploidy.csv"
-            ],
-            failure: true,
-            snapshot: 'stderr,stdout',
-            snapshot_ignore: 'Downloading plugin',
-            snapshot_include: 'tumor_ploidy'
-        ],
-        [
-            name: "Germline row with all tumor columns (invalid)",
+            name: "Germline row with tumor columns (invalid)",
             params: [
                 input: "${projectDir}/tests/csv/germline_with_all_tumor_cols.csv"
             ],
@@ -67,7 +37,12 @@ nextflow_pipeline {
                 vep_cache: "${projectDir}/tests/data_dummy/validation/vep_cache",
                 igenomes_base: "${projectDir}/tests/data_dummy/validation/igenomes"
             ],
-            stub: true
+            stub: true,
+            // we need to ignore some nf-tools warnings until this bug is resolved: https://github.com/nf-core/modules/issues/9573
+            snapshot_ignoreWarning: [
+                "nf-core pipelines do not accept positional arguments",
+                "A common mistake is to provide multiple values separated by spaces"
+                ],
         ],
         [
             name: "Somatic/Germline mosaic: multi samples with different optional fields (valid)",
@@ -78,7 +53,7 @@ nextflow_pipeline {
                 vep_cache: "${projectDir}/tests/data_dummy/validation/vep_cache",
                 igenomes_base: "${projectDir}/tests/data_dummy/validation/igenomes"
             ],
-            stub: true
+            stub: true,
         ]
     ]
 
