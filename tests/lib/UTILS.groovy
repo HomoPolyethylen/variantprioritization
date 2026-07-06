@@ -40,11 +40,9 @@ class UTILS {
         }
 
         // Always capture stdout and stderr for any WARN message
-        if (scenario.snapshot_ignoreWarning) {
-            assertion.add(filterNextflowOutput(workflow.stderr + workflow.stdout, include: ["WARN"], ignore: ["Creating env using", "Pulling Singularity image", "unable to stage foreign file", scenario.snapshot_ignoreWarning] ) ?: "No warnings")
-        } else {
-            assertion.add(filterNextflowOutput(workflow.stderr + workflow.stdout, include: ["WARN"], ignore: ["Creating env using", "Pulling Singularity image", "unable to stage foreign file"] ) ?: "No warnings")
-        }
+        def baseIgnore = ["Creating env using", "Pulling Singularity image", "Apptainer cache directory", "unable to stage foreign file"]
+        def extraIgnore = scenario.snapshot_ignoreWarning ? [scenario.snapshot_ignoreWarning].flatten() : []
+        assertion.add(filterNextflowOutput(workflow.stderr + workflow.stdout, include: ["WARN"], ignore: baseIgnore + extraIgnore) ?: "No warnings")
 
         if (scenario.snapshot) {
             def workflow_std = []
