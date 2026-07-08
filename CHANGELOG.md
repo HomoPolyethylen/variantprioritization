@@ -18,10 +18,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- `params.tumor_site` moved to samplesheet `meta.tumor_site`
-- `params.tumor_purity` moved to samplesheet `meta.tumor_purity`
-- `params.tumor_ploidy` moved to samplesheet `meta.tumor_ploidy`
-
 ### Dependencies
 
 | Dependency | Old version | New version |
@@ -30,8 +26,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Parameters
 
-| Params | status |
-| ------ | ------ |
+| Params         | status                         |
+| -------------- | ------------------------------ |
+| `tumor_site`   | removed / moved to samplesheet |
+| `tumor_purity` | removed / moved to samplesheet |
+| `tumor_ploidy` | removed / moved to samplesheet |
 
 ## v1.0.0 - 09.04.2026 - Jane Addams
 
