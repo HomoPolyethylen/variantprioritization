@@ -1,4 +1,5 @@
 def projectDir = new File('.').absolutePath
+def testDataDir = "https://github.com/nf-core/test-datasets/raw/refs/heads/variantprioritization"
 
 nextflow_pipeline {
 
@@ -11,7 +12,7 @@ nextflow_pipeline {
         [
             name: "Duplicated germline sample IDs (invalid)",
             params: [
-                input: "${projectDir}/tests/csv/duplicated_germline.csv"
+                input: "${testDataDir}/samplesheets/validation/duplicated_germline.csv"
             ],
             failure: true,
             snapshot: 'stderr,stdout',
@@ -21,7 +22,7 @@ nextflow_pipeline {
         [
             name: "Germline row with tumor columns (invalid)",
             params: [
-                input: "${projectDir}/tests/csv/germline_with_all_tumor_cols.csv"
+                input: "${testDataDir}/samplesheets/validation/germline_with_all_tumor_cols.csv"
             ],
             failure: true,
             snapshot: 'stderr,stdout',
@@ -31,11 +32,11 @@ nextflow_pipeline {
         [
             name: "Somatic row with all optional fields (valid)",
             params: [
-                input: "${projectDir}/tests/csv/somatic_valid_all_fields.csv",
+                input: "${testDataDir}/samplesheets/validation/somatic_valid_all_fields.csv",
                 cna_analysis: true,
-                pcgr_database_dir: "${projectDir}/tests/data_dummy/validation/pcgr_db",
-                vep_cache: "${projectDir}/tests/data_dummy/validation/vep_cache",
-                igenomes_base: "${projectDir}/tests/data_dummy/validation/igenomes"
+                pcgr_database_dir: "${testDataDir}/reference/dummy/pcgr_db.tar.gz",
+                vep_cache: "${testDataDir}/reference/dummy/vep_cache.tar.gz",
+                igenomes_base: "${testDataDir}/reference/dummy/igenomes"
             ],
             stub: true,
             // we need to ignore some nf-tools warnings until this bug is resolved: https://github.com/nf-core/modules/issues/9573
@@ -47,11 +48,11 @@ nextflow_pipeline {
         [
             name: "Somatic/Germline mosaic: multi samples with different optional fields (valid)",
             params: [
-                input: "${projectDir}/tests/csv/germline-somatic_valid_mosaic.csv",
+                input: "${testDataDir}/samplesheets/validation/germline-somatic_valid_mosaic.csv",
                 cna_analysis: false,
-                pcgr_database_dir: "${projectDir}/tests/data_dummy/validation/pcgr_db",
-                vep_cache: "${projectDir}/tests/data_dummy/validation/vep_cache",
-                igenomes_base: "${projectDir}/tests/data_dummy/validation/igenomes"
+                pcgr_database_dir: "${testDataDir}/reference/dummy/pcgr_db.tar.gz",
+                vep_cache: "${testDataDir}/reference/dummy/vep_cache.tar.gz",
+                igenomes_base: "${testDataDir}/reference/dummy/igenomes"
             ],
             stub: true,
         ]

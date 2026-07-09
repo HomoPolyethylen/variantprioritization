@@ -1,7 +1,7 @@
 {
     "Somatic row with all optional fields (valid)": {
         "content": [
-            9,
+            11,
             {
                 "BCFTOOLS_FILTER": {
                     "bcftools": 1.22
@@ -40,6 +40,12 @@
                 },
                 "TABIX_TABIX": {
                     "tabix": 1.21
+                },
+                "UNTAR_PCGR_DB": {
+                    "untar": 1.34
+                },
+                "UNTAR_VEP_CACHE": {
+                    "untar": 1.34
                 }
             },
             [
@@ -70,15 +76,16 @@
                 "pcgr/test.test",
                 "pipeline_info",
                 "pipeline_info/nf_core_variantprioritization_software_mqc_versions.yml",
+                "reference",
                 "tabix",
                 "tabix/HCC1395T_vs_HCC1395N.strelka.somatic_snvs_chr22.vcf.gz.tbi"
             ],
             "No warnings"
         ],
-        "timestamp": "2026-07-03T16:31:29.817368065",
+        "timestamp": "2026-07-10T13:05:22.838893331",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.4"
+            "nextflow": "26.04.2"
         }
     },
     "Duplicated germline sample IDs (invalid)": {
@@ -129,7 +136,7 @@
     },
     "Somatic/Germline mosaic: multi samples with different optional fields (valid)": {
         "content": [
-            26,
+            28,
             {
                 "BCFTOOLS_FILTER": {
                     "bcftools": 1.22
@@ -164,6 +171,12 @@
                 },
                 "TABIX_TABIX": {
                     "tabix": 1.21
+                },
+                "UNTAR_PCGR_DB": {
+                    "untar": 1.34
+                },
+                "UNTAR_VEP_CACHE": {
+                    "untar": 1.34
                 }
             },
             [
@@ -219,17 +232,16 @@
                 "pcgr/testC.test",
                 "pipeline_info",
                 "pipeline_info/nf_core_variantprioritization_software_mqc_versions.yml",
+                "reference",
                 "tabix",
                 "tabix/HCC1395T_vs_HCC1395N.strelka.somatic_snvs_chr22.vcf.gz.tbi"
             ],
-            [
-                "WARN: nf-core pipelines do not accept positional arguments. The positional argument `true` has been detected."
-            ]
+            "No warnings"
         ],
-        "timestamp": "2026-07-06T21:54:22.362897548",
+        "timestamp": "2026-07-10T13:06:35.583082248",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.4"
+            "nextflow": "26.04.2"
         }
     }
 }
