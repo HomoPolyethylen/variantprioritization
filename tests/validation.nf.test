@@ -55,6 +55,11 @@ nextflow_pipeline {
                 igenomes_base: "${testDataDir}/reference/dummy/igenomes"
             ],
             stub: true,
+            // we need to ignore some nf-tools warnings until this bug is resolved: https://github.com/nf-core/modules/issues/9573
+            snapshot_ignoreWarning: [
+                "nf-core pipelines do not accept positional arguments",
+                "A common mistake is to provide multiple values separated by spaces"
+                ],
         ]
     ]
 
