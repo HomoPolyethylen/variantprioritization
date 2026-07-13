@@ -20,10 +20,14 @@ process PCGR_RUN {
     task.ext.when == null || task.ext.when
 
     script:
-    def genome  = task.ext.genome ?: ''
-    def args    = task.ext.args ?: ''
-    prefix      = task.ext.prefix ?: "${meta.id}"
-    def cna_cmd = params.cna_analysis ? "--input_cna ${cna}" : ''
+    def genome           = task.ext.genome      ?: ''
+    def args             = task.ext.args        ?: ''
+    prefix               = task.ext.prefix      ?: "${meta.id}"
+    def cna_cmd          = params.cna_analysis  ? "--input_cna ${cna}"                  : ''
+    def opt_sex          = meta.sex             ? "--sex ${meta.sex}"                   : ''
+    def opt_tumor_site   = meta.tumor_site      ? "--tumor_site ${meta.tumor_site}"     : ''
+    def opt_tumor_purity = meta.tumor_purity    ? "--tumor_purity ${meta.tumor_purity}" : ''
+    def opt_tumor_ploidy = meta.tumor_ploidy    ? "--tumor_ploidy ${meta.tumor_ploidy}" : ''
     """
     export XDG_CACHE_HOME=/tmp
     export XDG_DATA_HOME=/tmp
@@ -38,11 +42,14 @@ process PCGR_RUN {
         --output_dir ${prefix} \\
         --genome_assembly ${genome} \\
         --sample_id ${prefix} \\
-        --sex ${meta.sex} \\
         --tumor_dp_tag 'TDP' \\
         --tumor_af_tag 'TAF' \\
         --call_conf_tag 'TAL' \\
         ${cna_cmd} \\
+        ${opt_sex} \\
+        ${opt_tumor_site} \\
+        ${opt_tumor_purity} \\
+        ${opt_tumor_ploidy} \\
         ${args}
     """
 

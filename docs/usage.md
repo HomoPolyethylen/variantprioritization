@@ -28,6 +28,9 @@ Optionally (somatic analysis only), you can provide:
 
 - `cna`: Path to a CNA segments file (required for somatic rows when `--cna_analysis` is enabled)
 - `sex`: the patients sex: `MALE`, `FEAMLE`, `UNKNOWN` (default)
+- `tumor_site`: the patiens primary tumor site. Use PCGRs numeric codes (see [PCGR docs](https://sigven.github.io/pcgr/articles/running.html#tumor-site) for details). As Tier 1 variants require a tumor site match, PCGR will not find Tier 1 variants if you do not specify a tumor site.
+- `tumor_ploidy`: estimated tumor ploidy.
+- `tumor_purity`: estimated tumor purity.
 
 ```bash
 --input '[path to samplesheet file]'

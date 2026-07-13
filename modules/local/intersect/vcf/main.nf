@@ -33,4 +33,10 @@ process INTERSECT_VCF {
         --tool_names ${toolNames} \\
         --output ${prefix}_keys.txt
     """
+
+    stub:
+    prefix = task.ext.prefix ?: "${meta.id}"
+    """
+    touch ${prefix}_keys.txt
+    """
 }
