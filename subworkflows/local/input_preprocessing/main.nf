@@ -4,11 +4,11 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { BCFTOOLS_FILTER  } from '../../../modules/nf-core/bcftools/filter'
-include { BCFTOOLS_NORM    } from '../../../modules/nf-core/bcftools/norm'
-include { TABIX_BGZIPTABIX } from '../../../modules/nf-core/tabix/bgziptabix'
-include { TABIX_TABIX      } from '../../../modules/nf-core/tabix/tabix'
-
+include { BCFTOOLS_FILTER   } from '../../../modules/nf-core/bcftools/filter'
+include { BCFTOOLS_NORM     } from '../../../modules/nf-core/bcftools/norm'
+include { TABIX_BGZIPTABIX  } from '../../../modules/nf-core/tabix/bgziptabix'
+include { TABIX_TABIX       } from '../../../modules/nf-core/tabix/tabix'
+include { HTSLIB_BGZIPTABIX } from '../../../modules/nf-core/htslib/bgziptabix/main'
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     RUN MAIN WORKFLOW
