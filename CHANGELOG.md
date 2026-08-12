@@ -23,8 +23,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 | Dependency | Old version | New version |
 | ---------- | ----------- | ----------- |
-| MultiQC    | 1.32        | 1.34        |
 | bcftools   | 1.22        | 1.23.1      |
+| htslib     | 1.21        | 1.24        |
+| MultiQC    | 1.32        | 1.35        |
 
 ### Parameters
 

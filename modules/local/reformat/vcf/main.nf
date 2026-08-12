@@ -3,7 +3,7 @@ process REFORMAT_VCF {
     label 'process_low'
 
     conda "${moduleDir}/environment.yml"
-    container "${workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container
+    container "${workflow.containerEngine in ['singularity', 'apptainer'] && !task.ext.singularity_pull_docker_container
         ? 'https://community-cr-prod.seqera.io/docker/registry/v2/blobs/sha256/3f/3f3833b76564f6d94f8aeedf1b7242920feec139034dc77ef454de8af002a0f9/data'
         : 'community.wave.seqera.io/library/bcftools_pysam_pandas_python:c4549d7814cd0bee'}"
 
